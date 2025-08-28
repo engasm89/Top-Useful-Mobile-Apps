@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📱 Top Useful Mobile Apps Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 400px;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .category {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+        }
+
+        .category h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #333;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .app-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .app-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            background: #fff;
+        }
+
+        .app-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .app-description {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .app-platform {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .app-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .app-link {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .app-link:hover {
+            background: #218838;
+            transform: translateY(-1px);
+        }
+
+        .app-link.ios {
+            background: #007aff;
+        }
+
+        .app-link.ios:hover {
+            background: #0056b3;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .github-link {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: #000;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📱 Top Useful Mobile Apps Collection</h1>
+            <p>A curated collection of essential mobile applications organized by category for productivity, learning, creativity, and daily life management.</p>
+            <div style="background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 10px; padding: 15px; margin-top: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <p style="margin: 0; color: #856404; font-size: 0.9rem;">
+                    <strong>📝 Note:</strong> The app store links in this list are placeholder URLs. To get the actual download links, search for each app name in the Google Play Store or Apple App Store, or visit the developer's official website.
+                </p>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="🔍 Search for apps..." id="searchBox">
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Total Apps</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2</div>
+                <div class="stat-label">Platforms</div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>🕌 Islamic & Religious Apps</h3>
+            <div class="apps-grid">
+                <div class="app-card" data-category="islamic">
+                    <div class="app-name">الباحث القرآني</div>
+                    <div class="app-description">Comprehensive Quran search and study tool</div>
+                    <span class="app-platform">Android/iOS</span>
+                    <div class="app-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.quransearch" class="app-link" target="_blank">Google Play</a>
+                        <a href="https://apps.apple.com/app/id123456789" class="app-link ios" target="_blank">App Store</a>
+                    </div>
+                </div>
+                <div class="app-card" data-category="islamic">
+                    <div class="app-name">Ayah</div>
+                    <div class="app-description">Quran search, recitation, and repetition</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="islamic">
+                    <div class="app-name">أذان</div>
+                    <div class="app-description">Prayer times and notifications</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="islamic">
+                    <div class="app-name">أنا مسلم</div>
+                    <div class="app-description">Islamic content and utilities</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="islamic">
+                    <div class="app-name">ترتيل</div>
+                    <div class="app-description">Quran memorization and correction</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="islamic">
+                    <div class="app-name">نختم</div>
+                    <div class="app-description">Quran recitation and completion tracking</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="islamic">
+                    <div class="app-name">Athkar</div>
+                    <div class="app-description">Islamic supplications and reminders</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="islamic">
+                    <div class="app-name">مصحف المدينة</div>
+                    <div class="app-description">Quran reading app</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="islamic">
+                    <div class="app-name">Prayer Now</div>
+                    <div class="app-description">Prayer times, Quran, and Islamic content</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="islamic">
+                    <div class="app-name">Mp3 Quran</div>
+                    <div class="app-description">Quran audio library</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>🚗 Navigation & Travel</h3>
+            <div class="apps-grid">
+                <div class="app-card" data-category="navigation">
+                    <div class="app-name">Google Maps</div>
+                    <div class="app-description">Navigation and location services</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="navigation">
+                    <div class="app-name">Radarbot</div>
+                    <div class="app-description">Speed camera alerts</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="navigation">
+                    <div class="app-name">Google Earth</div>
+                    <div class="app-description">Interactive world map</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>📚 Learning & Education</h3>
+            <div class="apps-grid">
+                <div class="app-card" data-category="education">
+                    <div class="app-name">ليتشس (Lichess)</div>
+                    <div class="app-description">Online chess platform</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="education">
+                    <div class="app-name">Duolingo</div>
+                    <div class="app-description">Language learning</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="education">
+                    <div class="app-name">LinkedIn Learning</div>
+                    <div class="app-description">Online courses and professional development</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="education">
+                    <div class="app-name">Khan Academy Kids</div>
+                    <div class="app-description">Educational content for children</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="education">
+                    <div class="app-name">ZAmerican English</div>
+                    <div class="app-description">English learning</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>🎨 Creativity & Design</h3>
+            <div class="apps-grid">
+                <div class="app-card" data-category="creativity">
+                    <div class="app-name">Canva</div>
+                    <div class="app-description">Graphic design and content creation</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="creativity">
+                    <div class="app-name">المصمم العربي</div>
+                    <div class="app-description">Arabic design app</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="creativity">
+                    <div class="app-name">Photoroom</div>
+                    <div class="app-description">Photo editing</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="creativity">
+                    <div class="app-name">Snapseed</div>
+                    <div class="app-description">Photo editing</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="creativity">
+                    <div class="app-name">Kinemaster</div>
+                    <div class="app-description">Video editing</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>📱 Productivity & Organization</h3>
+            <div class="apps-grid">
+                <div class="app-card" data-category="productivity">
+                    <div class="app-name">Keep Notes</div>
+                    <div class="app-description">Note-taking and organization</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="productivity">
+                    <div class="app-name">Google Calendar</div>
+                    <div class="app-description">Calendar and scheduling</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="productivity">
+                    <div class="app-name">Clarity</div>
+                    <div class="app-description">Journaling and organized note-taking</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="productivity">
+                    <div class="app-name">Obsidian</div>
+                    <div class="app-description">Note-taking and knowledge management</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="productivity">
+                    <div class="app-name">Excel</div>
+                    <div class="app-description">Spreadsheet management</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>🔧 Utilities & Tools</h3>
+            <div class="apps-grid">
+                <div class="app-card" data-category="utilities">
+                    <div class="app-name">CamScanner</div>
+                    <div class="app-description">Scanning documents</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="utilities">
+                    <div class="app-name">Adobe Scan</div>
+                    <div class="app-description">Document scanning</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="utilities">
+                    <div class="app-name">Xrecorder</div>
+                    <div class="app-description">Screen recording</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="utilities">
+                    <div class="app-name">CalcES</div>
+                    <div class="app-description">Scientific calculator</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="utilities">
+                    <div class="app-name">GlassWire</div>
+                    <div class="app-description">Internet usage monitoring</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>💰 Finance & Shopping</h3>
+            <div class="apps-grid">
+                <div class="app-card" data-category="finance">
+                    <div class="app-name">Instapay</div>
+                    <div class="app-description">Instant money transfers and payments</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="finance">
+                    <div class="app-name">Gold Bullion</div>
+                    <div class="app-description">Gold and silver price tracking</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="finance">
+                    <div class="app-name">Trading View</div>
+                    <div class="app-description">Financial market analysis</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="finance">
+                    <div class="app-name">WePay</div>
+                    <div class="app-description">Payment app</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="finance">
+                    <div class="app-name">Shein</div>
+                    <div class="app-description">Online shopping</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>🚫 Privacy & Security</h3>
+            <div class="apps-grid">
+                <div class="app-card" data-category="privacy">
+                    <div class="app-name">Free Adblocker</div>
+                    <div class="app-description">Removes ads (especially on YouTube)</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="privacy">
+                    <div class="app-name">Adguard</div>
+                    <div class="app-description">Ad blocker</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>📱 Communication & Social</h3>
+            <div class="apps-grid">
+                <div class="app-card" data-category="communication">
+                    <div class="app-name">ChatGPT</div>
+                    <div class="app-description">AI-powered chat and productivity</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="communication">
+                    <div class="app-name">WhatsApp</div>
+                    <div class="app-description">Messaging</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="communication">
+                    <div class="app-name">Telegram</div>
+                    <div class="app-description">Messaging and file sharing</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="communication">
+                    <div class="app-name">LinkedIn</div>
+                    <div class="app-description">Professional networking</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="communication">
+                    <div class="app-name">Reddit</div>
+                    <div class="app-description">Online forums and discussions</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>🎮 Entertainment & Media</h3>
+            <div class="apps-grid">
+                <div class="app-card" data-category="entertainment">
+                    <div class="app-name">Fruit Ninja</div>
+                    <div class="app-description">Mobile game</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="entertainment">
+                    <div class="app-name">SnapTube</div>
+                    <div class="app-description">Download videos from various platforms</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="entertainment">
+                    <div class="app-name">Radio Garden</div>
+                    <div class="app-description">Listen to global radio stations</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="entertainment">
+                    <div class="app-name">Sofa Score</div>
+                    <div class="app-description">Sports scores and statistics</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>🤖 AI & Automation</h3>
+            <div class="apps-grid">
+                <div class="app-card" data-category="ai">
+                    <div class="app-name">Copilot</div>
+                    <div class="app-description">AI-powered writing and coding assistant</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+                <div class="app-card" data-category="ai">
+                    <div class="app-name">Google Lens</div>
+                    <div class="app-description">Text translation and extraction from images</div>
+                    <span class="app-platform">Android/iOS</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Last Updated:</strong> December 2024</p>
+            <p><strong>Total Apps:</strong> 100+ | <strong>Categories:</strong> 15+</p>
+            <p>This list is continuously updated with new discoveries and user recommendations.</p>
+            <br>
+            <a href="https://github.com/yourusername/top-mobile-apps" class="github-link" target="_blank">📁 View on GitHub</a>
+        </div>
+    </div>
+
+    <script>
+        // Search functionality
+        const searchBox = document.getElementById('searchBox');
+        const appCards = document.querySelectorAll('.app-card');
+
+        searchBox.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            appCards.forEach(card => {
+                const appName = card.querySelector('.app-name').textContent.toLowerCase();
+                const appDescription = card.querySelector('.app-description').textContent.toLowerCase();
+                
+                if (appName.includes(searchTerm) || appDescription.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    card.classList.add('highlight');
+                } else {
+                    card.style.display = 'none';
+                    card.classList.remove('highlight');
+                }
+            });
+        });
+
+        // Remove highlight when search is cleared
+        searchBox.addEventListener('input', function() {
+            if (this.value === '') {
+                appCards.forEach(card => {
+                    card.classList.remove('highlight');
+                });
+            }
+        });
+
+        // Add click effect to app cards
+        appCards.forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-3px)';
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
