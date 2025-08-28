@@ -153,14 +153,7 @@ This repository contains a carefully selected list of mobile applications that h
 |----------|-------------|----------|-------|
 | **Merriam-Webster** | Dictionary | Android/iOS | [Google Play](https://play.google.com/store/apps/details?id=com.merriamwebster.android.dictionary) \| [App Store](https://apps.apple.com/app/merriam-webster-dictionary/id123456874) |
 
-## 🔍 **Apps with Unclear Descriptions**
-The following apps are listed but their specific functions are not clearly defined:
-- رجعونى
-- Ithy
-- Comera
-- فريد
-- فريده جميل
-- Moaid Mortada Mohamed
+
 
 ## 📱 **Platform Availability**
 - **Android/iOS**: Most apps are available on both platforms
